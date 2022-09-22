@@ -1,4 +1,4 @@
-package day08_allerts;
+package day08_alerts_iframe;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
@@ -12,7 +12,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class C01_Allerts {
+public class C01_Alerts {
 
     WebDriver driver;
 
