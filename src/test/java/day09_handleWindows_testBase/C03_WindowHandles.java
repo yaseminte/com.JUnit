@@ -1,6 +1,7 @@
 package day09_handleWindows_testBase;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.checkerframework.framework.qual.DefaultQualifier;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -8,9 +9,12 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 public class C03_WindowHandles {
@@ -59,6 +63,15 @@ public class C03_WindowHandles {
 
         // ●Click Here butonuna basın.
         driver.findElement(By.linkText("Click Here")).click();
+        List<String> windowList = new ArrayList<>(driver.getWindowHandles());
+        driver.switchTo().window(windowList.get(1));
+
+        for (String each:windowList
+             ) {
+            System.out.println(each);
+        }
+
+
         /*
         switchTo().newWindow() demeden link tiklayarak yeni tab veya window olustugunda
         biz driver'a yeni sayfaya gec demedikce, driver eski sayfada kalir
@@ -78,7 +91,7 @@ public class C03_WindowHandles {
         ikinci sayfanin window handle degeridir deriz.
          */
 
-        Set<String> windowHandleSeti = driver.getWindowHandles();
+       /* Set<String> windowHandleSeti = driver.getWindowHandles();
         System.out.println(windowHandleSeti);
 
         String ikinciSayfaWindowHandleDegeri = "";
@@ -110,6 +123,8 @@ public class C03_WindowHandles {
         actualTitle = driver.getTitle();
         Assert.assertEquals(expectedTitle, actualTitle);
 
+
+        */
 
     }
 
