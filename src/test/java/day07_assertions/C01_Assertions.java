@@ -16,7 +16,7 @@ public class C01_Assertions {
 
     static WebDriver driver;
     /*
-    Amazon ana sayfya gidin
+    Amazon ana sayfaya gidin
     3 farkli test methodu olusturarak asagidaki gorevleri yapin
     1- Url'in amazon icerdigini test edin
     2- Title'in facebook icermedigini test edin
